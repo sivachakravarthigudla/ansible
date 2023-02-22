@@ -1,0 +1,13 @@
+---
+  - hosts: slave1
+    become: True
+    tasks:
+      - name: install apache2
+        apt: name=apache2 update_cache=yes state=latest
+  
+
+  - hosts: slave2
+    become: True
+    tasks:
+      - name: install nginx
+        apt: name=nginx update_cache=yes state=latest
